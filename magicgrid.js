@@ -18,8 +18,7 @@ const getRandomColor = () => {
     }
 }
 
-
-const drawGrid = (canvas, context) => {
+const drawGrid = (context) => {
     if (!context) {
         alert(contextUndefined);
         return;
@@ -31,7 +30,7 @@ const drawGrid = (canvas, context) => {
         for (let i = 0; i < iterationLength; ++i) {
             let color = getRandomColor();
             context.fillStyle = `rgb(${color.red}, ${color.white}, ${color.blue})`;
-            context.fillRect(i * squareSideLength, j*squareSideLength, squareSideLength, squareSideLength);
+            context.fillRect(i * squareSideLength, j * squareSideLength, squareSideLength, squareSideLength);
         }
     }
 };
@@ -47,5 +46,5 @@ window.onload = () => {
     magicGridCanvas.height = sideLength;
 
     let context = magicGridCanvas.getContext(contextType);
-    drawGrid(magicGridCanvas, context);
+    drawGrid(context);
 };
